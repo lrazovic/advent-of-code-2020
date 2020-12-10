@@ -5,15 +5,13 @@ def part_one(nums: list[int]):
 
 def part_two(nums: list[int]):
     nums.reverse()
-    path = {x: -1 for x in nums}
-    path[nums[0]] = 1
-    for key in path:
-        if key != nums[0]:
-            sum = 0
-            for x in range(1,4):
-                if key + x in path:
-                    sum += path[key + x]
-            path[key] = sum
+    path = {nums[0]: 1}
+    for key in nums[1:]:
+        sum = 0
+        for x in range(1, 4):
+            if key + x in path:
+                sum += path[key + x]
+        path[key] = sum
     return path[0]
 
 
