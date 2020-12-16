@@ -13,7 +13,6 @@ def part_two(buses):
         step *= bus
     return time
 
-
 if __name__ == "__main__":
     with open("input13.txt") as file:
         earliest = int(file.readline())
